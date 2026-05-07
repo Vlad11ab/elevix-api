@@ -1,0 +1,190 @@
+databaseChangeLog:
+  - changeSet:
+      id: seed-orders
+      author: online-shop-team
+      comment: "Insert sample orders and order details"
+      preConditions:
+        - onFail: MARK_RAN
+        - tableExists:
+            tableName: orders
+      changes:
+        # Order 1 - Andrei Popescu (customer 2) - Delivered
+        - insert:
+            tableName: orders
+            columns:
+              - column: { name: ammount, valueNumeric: 4897 }
+              - column: { name: shipping_adress, value: "Str. Victoriei 45, Bucuresti" }
+              - column: { name: order_adress, value: "Str. Victoriei 45, Bucuresti" }
+              - column: { name: order_email, value: "andrei.popescu@email.ro" }
+              - column: { name: order_date, valueDate: "2024-04-01" }
+              - column: { name: order_status, value: "Delivered" }
+              - column: { name: user_id, valueNumeric: 2 }
+              - column: { name: created_at, valueComputed: "NOW()" }
+              - column: { name: updated_at, valueComputed: "NOW()" }
+        # Order 2 - Maria Ionescu (customer 3) - Processing
+        - insert:
+            tableName: orders
+            columns:
+              - column: { name: ammount, valueNumeric: 689 }
+              - column: { name: shipping_adress, value: "Bd. Unirii 12, Cluj-Napoca" }
+              - column: { name: order_adress, value: "Bd. Unirii 12, Cluj-Napoca" }
+              - column: { name: order_email, value: "maria.ionescu@email.ro" }
+              - column: { name: order_date, valueDate: "2024-04-02" }
+              - column: { name: order_status, value: "Processing" }
+              - column: { name: user_id, valueNumeric: 3 }
+              - column: { name: created_at, valueComputed: "NOW()" }
+              - column: { name: updated_at, valueComputed: "NOW()" }
+        # Order 3 - Klaus Muller (customer 4) - Shipped
+        - insert:
+            tableName: orders
+            columns:
+              - column: { name: ammount, valueNumeric: 2548 }
+              - column: { name: shipping_adress, value: "Berliner Str. 88, Berlin" }
+              - column: { name: order_adress, value: "Berliner Str. 88, Berlin" }
+              - column: { name: order_email, value: "klaus.muller@email.de" }
+              - column: { name: order_date, valueDate: "2024-04-03" }
+              - column: { name: order_status, value: "Shipped" }
+              - column: { name: user_id, valueNumeric: 4 }
+              - column: { name: created_at, valueComputed: "NOW()" }
+              - column: { name: updated_at, valueComputed: "NOW()" }
+        # Order 4 - Pierre Dubois (customer 6) - Cancelled
+        - insert:
+            tableName: orders
+            columns:
+              - column: { name: ammount, valueNumeric: 120 }
+              - column: { name: shipping_adress, value: "15 Rue de Rivoli, Paris" }
+              - column: { name: order_adress, value: "15 Rue de Rivoli, Paris" }
+              - column: { name: order_email, value: "pierre.dubois@email.fr" }
+              - column: { name: order_date, valueDate: "2024-04-05" }
+              - column: { name: order_status, value: "Cancelled" }
+              - column: { name: user_id, valueNumeric: 6 }
+              - column: { name: created_at, valueComputed: "NOW()" }
+              - column: { name: updated_at, valueComputed: "NOW()" }
+        # Order 5 - Andrei Popescu (customer 2) - Processing
+        - insert:
+            tableName: orders
+            columns:
+              - column: { name: ammount, valueNumeric: 947 }
+              - column: { name: shipping_adress, value: "Str. Victoriei 45, Bucuresti" }
+              - column: { name: order_adress, value: "Str. Victoriei 45, Bucuresti" }
+              - column: { name: order_email, value: "andrei.popescu@email.ro" }
+              - column: { name: order_date, valueDate: "2024-04-07" }
+              - column: { name: order_status, value: "Processing" }
+              - column: { name: user_id, valueNumeric: 2 }
+              - column: { name: created_at, valueComputed: "NOW()" }
+              - column: { name: updated_at, valueComputed: "NOW()" }
+
+  - changeSet:
+      id: seed-order-details
+      author: online-shop-team
+      comment: "Insert sample order detail line items"
+      preConditions:
+        - onFail: MARK_RAN
+        - tableExists:
+            tableName: order_details
+      changes:
+        # Order 1 items (Andrei - Delivered)
+        - insert:
+            tableName: order_details
+            columns:
+              - column: { name: price, valueNumeric: 4599 }
+              - column: { name: sku, value: "SKU-EL-001" }
+              - column: { name: quantity, valueNumeric: 1 }
+              - column: { name: order_id, valueNumeric: 1 }
+              - column: { name: product_id, valueNumeric: 1 }
+              - column: { name: created_at, valueComputed: "NOW()" }
+              - column: { name: updated_at, valueComputed: "NOW()" }
+        - insert:
+            tableName: order_details
+            columns:
+              - column: { name: price, valueNumeric: 89 }
+              - column: { name: sku, value: "SKU-CL-010" }
+              - column: { name: quantity, valueNumeric: 2 }
+              - column: { name: order_id, valueNumeric: 1 }
+              - column: { name: product_id, valueNumeric: 5 }
+              - column: { name: created_at, valueComputed: "NOW()" }
+              - column: { name: updated_at, valueComputed: "NOW()" }
+        - insert:
+            tableName: order_details
+            columns:
+              - column: { name: price, valueNumeric: 120 }
+              - column: { name: sku, value: "SKU-SP-015" }
+              - column: { name: quantity, valueNumeric: 1 }
+              - column: { name: order_id, valueNumeric: 1 }
+              - column: { name: product_id, valueNumeric: 9 }
+              - column: { name: created_at, valueComputed: "NOW()" }
+              - column: { name: updated_at, valueComputed: "NOW()" }
+        # Order 2 items (Maria - Processing)
+        - insert:
+            tableName: order_details
+            columns:
+              - column: { name: price, valueNumeric: 599 }
+              - column: { name: sku, value: "SKU-CL-011" }
+              - column: { name: quantity, valueNumeric: 1 }
+              - column: { name: order_id, valueNumeric: 2 }
+              - column: { name: product_id, valueNumeric: 6 }
+              - column: { name: created_at, valueComputed: "NOW()" }
+              - column: { name: updated_at, valueComputed: "NOW()" }
+        - insert:
+            tableName: order_details
+            columns:
+              - column: { name: price, valueNumeric: 89 }
+              - column: { name: sku, value: "SKU-CL-010" }
+              - column: { name: quantity, valueNumeric: 1 }
+              - column: { name: order_id, valueNumeric: 2 }
+              - column: { name: product_id, valueNumeric: 5 }
+              - column: { name: created_at, valueComputed: "NOW()" }
+              - column: { name: updated_at, valueComputed: "NOW()" }
+        # Order 3 items (Klaus - Shipped)
+        - insert:
+            tableName: order_details
+            columns:
+              - column: { name: price, valueNumeric: 2199 }
+              - column: { name: sku, value: "SKU-EL-002" }
+              - column: { name: quantity, valueNumeric: 1 }
+              - column: { name: order_id, valueNumeric: 3 }
+              - column: { name: product_id, valueNumeric: 2 }
+              - column: { name: created_at, valueComputed: "NOW()" }
+              - column: { name: updated_at, valueComputed: "NOW()" }
+        - insert:
+            tableName: order_details
+            columns:
+              - column: { name: price, valueNumeric: 349 }
+              - column: { name: sku, value: "SKU-EL-003" }
+              - column: { name: quantity, valueNumeric: 1 }
+              - column: { name: order_id, valueNumeric: 3 }
+              - column: { name: product_id, valueNumeric: 3 }
+              - column: { name: created_at, valueComputed: "NOW()" }
+              - column: { name: updated_at, valueComputed: "NOW()" }
+        # Order 4 items (Pierre - Cancelled)
+        - insert:
+            tableName: order_details
+            columns:
+              - column: { name: price, valueNumeric: 120 }
+              - column: { name: sku, value: "SKU-SP-015" }
+              - column: { name: quantity, valueNumeric: 1 }
+              - column: { name: order_id, valueNumeric: 4 }
+              - column: { name: product_id, valueNumeric: 9 }
+              - column: { name: created_at, valueComputed: "NOW()" }
+              - column: { name: updated_at, valueComputed: "NOW()" }
+        # Order 5 items (Andrei - Processing)
+        - insert:
+            tableName: order_details
+            columns:
+              - column: { name: price, valueNumeric: 349 }
+              - column: { name: sku, value: "SKU-EL-003" }
+              - column: { name: quantity, valueNumeric: 1 }
+              - column: { name: order_id, valueNumeric: 5 }
+              - column: { name: product_id, valueNumeric: 3 }
+              - column: { name: created_at, valueComputed: "NOW()" }
+              - column: { name: updated_at, valueComputed: "NOW()" }
+        - insert:
+            tableName: order_details
+            columns:
+              - column: { name: price, valueNumeric: 599 }
+              - column: { name: sku, value: "SKU-CL-011" }
+              - column: { name: quantity, valueNumeric: 1 }
+              - column: { name: order_id, valueNumeric: 5 }
+              - column: { name: product_id, valueNumeric: 6 }
+              - column: { name: created_at, valueComputed: "NOW()" }
+              - column: { name: updated_at, valueComputed: "NOW()" }

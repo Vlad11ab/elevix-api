@@ -1,0 +1,51 @@
+server:
+  port: ${SERVER_PORT:8082}
+
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:mysql://127.0.0.1:3306/online_shop_spring?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC&createDatabaseIfNotExist=true}
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:root}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      pool-name: HikariPool
+      minimum-idle: 5
+      maximum-pool-size: 10
+      idle-timeout: 60000
+      connection-timeout: 30000
+      max-lifetime: 1800000
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: ${SHOW_SQL:true}
+    properties:
+      hibernate:
+        format_sql: true
+    open-in-view: false
+  liquibase:
+    enabled: false
+
+app:
+  seed:
+    enabled: ${SEED_ENABLED:true}
+  cors:
+    # Comma-separated origin patterns. Defaults cover common dev frontends:
+    #   React/Next.js (3000), Angular (4200), Vue/Vite (5173), Vite preview (4173),
+    #   Webpack dev (8080), HTML over file:// is "null".
+    # Override in production via APP_CORS_ALLOWED_ORIGINS env var.
+    allowed-origins: ${APP_CORS_ALLOWED_ORIGINS:http://localhost:3000,http://127.0.0.1:3000,http://localhost:4200,http://127.0.0.1:4200,http://localhost:5173,http://127.0.0.1:5173,http://localhost:4173,http://localhost:8080,http://localhost:8081,http://*.local:*}
+  security:
+    jwt:
+      # Base64-encoded HS256 secret. Override in production via APP_SECURITY_JWT_SECRET env var.
+      secret: "${APP_SECURITY_JWT_SECRET:Y2hhbmdlLW1lLWluLXByb2QtdGhpcy1pcy1hLWxvbmctc2VjcmV0LWZvci1qd3QtaHMyNTY=}"
+      access-token-expiration-ms: ${APP_SECURITY_JWT_ACCESS_EXP_MS:900000}
+      refresh-token-expiration-ms: ${APP_SECURITY_JWT_REFRESH_EXP_MS:604800000}
+
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    operations-sorter: method
+    tags-sorter: alpha

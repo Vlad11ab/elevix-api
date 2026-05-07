@@ -1,0 +1,16 @@
+/Users/bogdandaniel/Documents/projects-for-teaching/devops/projects-for-testing/online-shop-cloud-spring-api/src/test/java/mycode/onlineshopspring/OnlineShopSpringApplicationTests.java
+/Users/bogdandaniel/Documents/projects-for-teaching/devops/projects-for-testing/online-shop-cloud-spring-api/src/test/java/mycode/onlineshopspring/common/pagination/PaginationUtilsTest.java
+/Users/bogdandaniel/Documents/projects-for-teaching/devops/projects-for-testing/online-shop-cloud-spring-api/src/test/java/mycode/onlineshopspring/customer/service/UserQueryServiceImplTest.java
+/Users/bogdandaniel/Documents/projects-for-teaching/devops/projects-for-testing/online-shop-cloud-spring-api/src/test/java/mycode/onlineshopspring/integration/AuthFlowIntegrationTest.java
+/Users/bogdandaniel/Documents/projects-for-teaching/devops/projects-for-testing/online-shop-cloud-spring-api/src/test/java/mycode/onlineshopspring/integration/AuthorizationIntegrationTest.java
+/Users/bogdandaniel/Documents/projects-for-teaching/devops/projects-for-testing/online-shop-cloud-spring-api/src/test/java/mycode/onlineshopspring/integration/PermissionManagementIntegrationTest.java
+/Users/bogdandaniel/Documents/projects-for-teaching/devops/projects-for-testing/online-shop-cloud-spring-api/src/test/java/mycode/onlineshopspring/integration/http/AbstractEndpointIntegrationTest.java
+/Users/bogdandaniel/Documents/projects-for-teaching/devops/projects-for-testing/online-shop-cloud-spring-api/src/test/java/mycode/onlineshopspring/integration/http/AdminsEndpointIT.java
+/Users/bogdandaniel/Documents/projects-for-teaching/devops/projects-for-testing/online-shop-cloud-spring-api/src/test/java/mycode/onlineshopspring/integration/http/CustomersEndpointIT.java
+/Users/bogdandaniel/Documents/projects-for-teaching/devops/projects-for-testing/online-shop-cloud-spring-api/src/test/java/mycode/onlineshopspring/integration/http/OrderDetailsEndpointIT.java
+/Users/bogdandaniel/Documents/projects-for-teaching/devops/projects-for-testing/online-shop-cloud-spring-api/src/test/java/mycode/onlineshopspring/integration/http/OrdersEndpointIT.java
+/Users/bogdandaniel/Documents/projects-for-teaching/devops/projects-for-testing/online-shop-cloud-spring-api/src/test/java/mycode/onlineshopspring/integration/http/ProductsEndpointIT.java
+/Users/bogdandaniel/Documents/projects-for-teaching/devops/projects-for-testing/online-shop-cloud-spring-api/src/test/java/mycode/onlineshopspring/orderDetails/service/OrderDetailsQuerryServiceImplTest.java
+/Users/bogdandaniel/Documents/projects-for-teaching/devops/projects-for-testing/online-shop-cloud-spring-api/src/test/java/mycode/onlineshopspring/orders/service/OrdersQuerryServiceImplTest.java
+/Users/bogdandaniel/Documents/projects-for-teaching/devops/projects-for-testing/online-shop-cloud-spring-api/src/test/java/mycode/onlineshopspring/products/service/ProductsQuerryServiceImplTest.java
+/Users/bogdandaniel/Documents/projects-for-teaching/devops/projects-for-testing/online-shop-cloud-spring-api/src/test/java/mycode/onlineshopspring/repository/RepositoryPaginationTest.java

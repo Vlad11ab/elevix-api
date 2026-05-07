@@ -1,0 +1,140 @@
+databaseChangeLog:
+  - changeSet:
+      id: seed-products
+      author: online-shop-team
+      comment: "Insert initial product catalog"
+      preConditions:
+        - onFail: MARK_RAN
+        - tableExists:
+            tableName: products
+      changes:
+        - insert:
+            tableName: products
+            columns:
+              - column: { name: sku, value: "SKU-EL-001" }
+              - column: { name: name, value: "Laptop ProMax 15" }
+              - column: { name: price, valueNumeric: 4599 }
+              - column: { name: weight, valueNumeric: 2100 }
+              - column: { name: descriptions, value: "Laptop performant cu procesor ultima generatie, 16GB RAM, 512GB SSD. Ecran IPS Full HD de 15.6 inch." }
+              - column: { name: category, value: "Electronics" }
+              - column: { name: create_date, valueDate: "2024-01-15" }
+              - column: { name: stock, valueNumeric: 45 }
+              - column: { name: created_at, valueComputed: "NOW()" }
+              - column: { name: updated_at, valueComputed: "NOW()" }
+        - insert:
+            tableName: products
+            columns:
+              - column: { name: sku, value: "SKU-EL-002" }
+              - column: { name: name, value: "Monitor UltraWide 34\"" }
+              - column: { name: price, valueNumeric: 2199 }
+              - column: { name: weight, valueNumeric: 6800 }
+              - column: { name: descriptions, value: "Monitor curbat IPS, rezolutie WQHD 3440x1440, timp de raspuns 1ms, 144Hz." }
+              - column: { name: category, value: "Electronics" }
+              - column: { name: create_date, valueDate: "2024-01-18" }
+              - column: { name: stock, valueNumeric: 22 }
+              - column: { name: created_at, valueComputed: "NOW()" }
+              - column: { name: updated_at, valueComputed: "NOW()" }
+        - insert:
+            tableName: products
+            columns:
+              - column: { name: sku, value: "SKU-EL-003" }
+              - column: { name: name, value: "Tastatura Mecanica RGB" }
+              - column: { name: price, valueNumeric: 349 }
+              - column: { name: weight, valueNumeric: 820 }
+              - column: { name: descriptions, value: "Tastatura mecanica cu switch-uri Cherry MX Red, iluminare RGB per tasta, layout full-size." }
+              - column: { name: category, value: "Electronics" }
+              - column: { name: create_date, valueDate: "2024-03-05" }
+              - column: { name: stock, valueNumeric: 31 }
+              - column: { name: created_at, valueComputed: "NOW()" }
+              - column: { name: updated_at, valueComputed: "NOW()" }
+        - insert:
+            tableName: products
+            columns:
+              - column: { name: sku, value: "SKU-EL-004" }
+              - column: { name: name, value: "Mouse Wireless Ergonomic" }
+              - column: { name: price, valueNumeric: 189 }
+              - column: { name: weight, valueNumeric: 95 }
+              - column: { name: descriptions, value: "Mouse wireless ergonomic, sensor 16000 DPI, baterie reincarcabila, conectivitate Bluetooth + USB." }
+              - column: { name: category, value: "Electronics" }
+              - column: { name: create_date, valueDate: "2024-03-10" }
+              - column: { name: stock, valueNumeric: 58 }
+              - column: { name: created_at, valueComputed: "NOW()" }
+              - column: { name: updated_at, valueComputed: "NOW()" }
+        - insert:
+            tableName: products
+            columns:
+              - column: { name: sku, value: "SKU-CL-010" }
+              - column: { name: name, value: "Tricou Sport Dry-Fit" }
+              - column: { name: price, valueNumeric: 89 }
+              - column: { name: weight, valueNumeric: 180 }
+              - column: { name: descriptions, value: "Material respirabil, uscare rapida, ideal pentru antrenament. Disponibil in 5 culori." }
+              - column: { name: category, value: "Clothing" }
+              - column: { name: create_date, valueDate: "2024-02-03" }
+              - column: { name: stock, valueNumeric: 5 }
+              - column: { name: created_at, valueComputed: "NOW()" }
+              - column: { name: updated_at, valueComputed: "NOW()" }
+        - insert:
+            tableName: products
+            columns:
+              - column: { name: sku, value: "SKU-CL-011" }
+              - column: { name: name, value: "Geaca Iarna Puf" }
+              - column: { name: price, valueNumeric: 599 }
+              - column: { name: weight, valueNumeric: 750 }
+              - column: { name: descriptions, value: "Geaca cu puf natural, rezistenta la apa, captuseala termica, gluga detasabila." }
+              - column: { name: category, value: "Clothing" }
+              - column: { name: create_date, valueDate: "2024-03-12" }
+              - column: { name: stock, valueNumeric: 18 }
+              - column: { name: created_at, valueComputed: "NOW()" }
+              - column: { name: updated_at, valueComputed: "NOW()" }
+        - insert:
+            tableName: products
+            columns:
+              - column: { name: sku, value: "SKU-HM-020" }
+              - column: { name: name, value: "Lampa LED Birou" }
+              - column: { name: price, valueNumeric: 149 }
+              - column: { name: weight, valueNumeric: 950 }
+              - column: { name: descriptions, value: "Lampa LED cu 3 moduri de iluminare (cald, neutru, rece), brat flexibil, port USB integrat." }
+              - column: { name: category, value: "Home" }
+              - column: { name: create_date, valueDate: "2024-02-10" }
+              - column: { name: stock, valueNumeric: 0 }
+              - column: { name: created_at, valueComputed: "NOW()" }
+              - column: { name: updated_at, valueComputed: "NOW()" }
+        - insert:
+            tableName: products
+            columns:
+              - column: { name: sku, value: "SKU-HM-021" }
+              - column: { name: name, value: "Set Prosoape Bumbac" }
+              - column: { name: price, valueNumeric: 79 }
+              - column: { name: weight, valueNumeric: 600 }
+              - column: { name: descriptions, value: "Set 4 prosoape 100% bumbac egipt, 600gsm, diverse culori. Include 2 mari si 2 mici." }
+              - column: { name: category, value: "Home" }
+              - column: { name: create_date, valueDate: "2024-03-18" }
+              - column: { name: stock, valueNumeric: 8 }
+              - column: { name: created_at, valueComputed: "NOW()" }
+              - column: { name: updated_at, valueComputed: "NOW()" }
+        - insert:
+            tableName: products
+            columns:
+              - column: { name: sku, value: "SKU-SP-015" }
+              - column: { name: name, value: "Minge Fotbal Pro" }
+              - column: { name: price, valueNumeric: 120 }
+              - column: { name: weight, valueNumeric: 430 }
+              - column: { name: descriptions, value: "Minge profesionala FIFA Quality Pro, marime 5, cusuta manual, material PU premium." }
+              - column: { name: category, value: "Sports" }
+              - column: { name: create_date, valueDate: "2024-03-01" }
+              - column: { name: stock, valueNumeric: 67 }
+              - column: { name: created_at, valueComputed: "NOW()" }
+              - column: { name: updated_at, valueComputed: "NOW()" }
+        - insert:
+            tableName: products
+            columns:
+              - column: { name: sku, value: "SKU-SP-016" }
+              - column: { name: name, value: "Banda Alergare Pliabila" }
+              - column: { name: price, valueNumeric: 2899 }
+              - column: { name: weight, valueNumeric: 35000 }
+              - column: { name: descriptions, value: "Banda de alergare pliabila, motor 2.5HP, viteza max 16km/h, ecran LCD, 12 programe." }
+              - column: { name: category, value: "Sports" }
+              - column: { name: create_date, valueDate: "2024-04-01" }
+              - column: { name: stock, valueNumeric: 3 }
+              - column: { name: created_at, valueComputed: "NOW()" }
+              - column: { name: updated_at, valueComputed: "NOW()" }

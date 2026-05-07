@@ -1,0 +1,82 @@
+databaseChangeLog:
+  - changeSet:
+      id: seed-customers
+      author: online-shop-team
+      comment: "Insert initial customers including an admin user"
+      preConditions:
+        - onFail: MARK_RAN
+        - tableExists:
+            tableName: customers
+      changes:
+        - insert:
+            tableName: customers
+            columns:
+              - column: { name: email, value: "admin@onlineshop.ro" }
+              - column: { name: password, value: "admin123" }
+              - column: { name: full_name, value: "Admin Shop" }
+              - column: { name: billing_address, value: "Str. Administratiei 1, Bucuresti" }
+              - column: { name: default_shipping_address, value: "Str. Administratiei 1, Bucuresti" }
+              - column: { name: country, value: "Romania" }
+              - column: { name: phone, value: "0700 000 000" }
+              - column: { name: created_at, valueComputed: "NOW()" }
+              - column: { name: updated_at, valueComputed: "NOW()" }
+        - insert:
+            tableName: customers
+            columns:
+              - column: { name: email, value: "andrei.popescu@email.ro" }
+              - column: { name: password, value: "parola123" }
+              - column: { name: full_name, value: "Andrei Popescu" }
+              - column: { name: billing_address, value: "Str. Victoriei 45, Sector 1, Bucuresti" }
+              - column: { name: default_shipping_address, value: "Str. Victoriei 45, Sector 1, Bucuresti" }
+              - column: { name: country, value: "Romania" }
+              - column: { name: phone, value: "0722 111 222" }
+              - column: { name: created_at, valueComputed: "NOW()" }
+              - column: { name: updated_at, valueComputed: "NOW()" }
+        - insert:
+            tableName: customers
+            columns:
+              - column: { name: email, value: "maria.ionescu@email.ro" }
+              - column: { name: password, value: "maria2024" }
+              - column: { name: full_name, value: "Maria Ionescu" }
+              - column: { name: billing_address, value: "Bd. Unirii 12, Cluj-Napoca" }
+              - column: { name: default_shipping_address, value: "Bd. Unirii 12, Cluj-Napoca" }
+              - column: { name: country, value: "Romania" }
+              - column: { name: phone, value: "0733 222 333" }
+              - column: { name: created_at, valueComputed: "NOW()" }
+              - column: { name: updated_at, valueComputed: "NOW()" }
+        - insert:
+            tableName: customers
+            columns:
+              - column: { name: email, value: "klaus.muller@email.de" }
+              - column: { name: password, value: "klaus2024" }
+              - column: { name: full_name, value: "Klaus Muller" }
+              - column: { name: billing_address, value: "Berliner Str. 88, Berlin" }
+              - column: { name: default_shipping_address, value: "Berliner Str. 88, Berlin" }
+              - column: { name: country, value: "Germania" }
+              - column: { name: phone, value: "+49 170 123 456" }
+              - column: { name: created_at, valueComputed: "NOW()" }
+              - column: { name: updated_at, valueComputed: "NOW()" }
+        - insert:
+            tableName: customers
+            columns:
+              - column: { name: email, value: "elena.v@email.ro" }
+              - column: { name: password, value: "elena2024" }
+              - column: { name: full_name, value: "Elena Vasilescu" }
+              - column: { name: billing_address, value: "Str. Mihai Eminescu 7, Iasi" }
+              - column: { name: default_shipping_address, value: "Str. Libertatii 23, Iasi" }
+              - column: { name: country, value: "Romania" }
+              - column: { name: phone, value: "0744 333 444" }
+              - column: { name: created_at, valueComputed: "NOW()" }
+              - column: { name: updated_at, valueComputed: "NOW()" }
+        - insert:
+            tableName: customers
+            columns:
+              - column: { name: email, value: "pierre.dubois@email.fr" }
+              - column: { name: password, value: "pierre2024" }
+              - column: { name: full_name, value: "Pierre Dubois" }
+              - column: { name: billing_address, value: "15 Rue de Rivoli, Paris" }
+              - column: { name: default_shipping_address, value: "15 Rue de Rivoli, Paris" }
+              - column: { name: country, value: "Franta" }
+              - column: { name: phone, value: "+33 6 12 34 56" }
+              - column: { name: created_at, valueComputed: "NOW()" }
+              - column: { name: updated_at, valueComputed: "NOW()" }
