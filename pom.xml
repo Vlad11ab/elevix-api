@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>mycode</groupId>
-    <artifactId>OnlineShopSpring</artifactId>
+    <artifactId>elevix-api</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>OnlineShopSpring</name>
-    <description>OnlineShopSpring</description>
+    <name>elevix-api</name>
+    <description>elevix-api</description>
     <url/>
     <licenses>
         <license/>
